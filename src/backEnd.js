@@ -5,7 +5,8 @@ function User(month, date, year, activity, sex, relationships, smoker){
   this.activityLevel = activity;
   this.sex = sex;
   this.closeRelationships = relationships;
-  this.smoker = smoker
+  this.smoker = smoker;
+  this.over = false;
 }
 
 function ageCalc(user){
@@ -60,9 +61,14 @@ function userLifeExpectancy(user){
     lifeExpectancy -= 5;
   }
 
-  user.averageLifeExpectancy = lifeExpectancy;
+  if (lifeExpectancy){
+    user.averageLifeExpectancy = lifeExpectancy;
+  } else {
+    user.averageLifeExpectancy = 78;
+  }
 
   if (user.earthAge > user.averageLifeExpectancy){
+    user.over = true;
     user.earthYearsOver = user.earthAge - user.averageLifeExpectancy;
     user.mercuryYearsOver = parseInt(user.earthYearsOver / .24);
     user.venusYearsOver = parseInt(user.earthYearsOver / .62);
