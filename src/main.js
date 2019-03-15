@@ -1,5 +1,5 @@
-import './css/styles.css';
 import './css/Aurora-Framework.css';
+import './css/styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap';
@@ -42,5 +42,9 @@ $(function(){
       $(".yearsOver").fadeIn().delay(500);
     }
     $(".ageDisplay").fadeIn().delay(500);
+    $(".restart").fadeIn().delay(500);
+  });
+  $(".restart").click(function(){
+    location.reload();
   });
 });

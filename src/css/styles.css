@@ -1,3 +1,38 @@
-.ageDisplay, .yearsLeft, .yearsOver{
+.ageDisplay, .yearsLeft, .yearsOver, .restart{
   display: none;
+}
+body{
+  margin: 2rem auto !important;
+  width: 75%;
+  text-align: center !important;
+  font-size: 3rem !important;
+}
+#main1, #main2{
+  text-align: center;
+  font-size: 5rem;
+  width: 65%;
+  border-radius: 10px;
+}
+h1{
+  margin: 4rem auto !important;
+}
+h2{
+  font-size: 3rem !important;
+}
+form{
+  font-size: 3rem;
+}
+.ageDisplay {
+  float: left;
+  width: 40%;
+  margin: 2rem;
+}
+.yearsLeft {
+  float: right;
+  width: 40%;
+  margin: 2rem;
+}
+.yearsOver {
+  float: right;
+  width: 40%;
 }
