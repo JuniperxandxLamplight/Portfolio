@@ -13,4 +13,9 @@ describe('userAges', function(){
     ageCalc(user);
     expect(user.mercuryAge).toEqual(83);
   });
+
+  it('should return the age of the user in years on Venus', function(){
+    ageCalc(user);
+    expect(user.venusAge).toEqual(32);
+  });
 });

@@ -25,6 +25,8 @@ function ageCalc(user){
   user.earthAge = yearDifference + timeOfYear;
 
   user.mercuryAge = parseInt(user.earthAge / .24);
+
+  user.venusAge = parseInt(user.earthAge / .62);
 }
 
 
