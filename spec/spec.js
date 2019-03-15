@@ -30,28 +30,33 @@ describe('userAges', function(){
 
 describe('userLifeExpectancy', function(){
 
-  // it('should check what the life expectancy of ')
-
-  it('should return average remaining years of life for user on each planet', function(){
-    const user = new User(6, 10, 1998);
+  it('should check what the life expectancy of user is', function(){
+    const user = new User(6, 10, 1998, 'high', 'male', 4, 'no');
     ageCalc(user);
     userLifeExpectancy(user);
-    expect(user.earthYearsLeft).toEqual(58);
-    expect(user.mercuryYearsLeft).toEqual(241);
-    expect(user.venusYearsLeft).toEqual(93);
-    expect(user.marsYearsLeft).toEqual(30);
-    expect(user.jupiterYearsLeft).toEqual(4);
+    expect(user.averageLifeExpectancy).toEqual(86);
+  });
+
+  it('should return average remaining years of life for user on each planet', function(){
+    const user = new User(6, 10, 1998, 'high', 'male', 4);
+    ageCalc(user);
+    userLifeExpectancy(user);
+    expect(user.earthYearsLeft).toEqual(63);
+    expect(user.mercuryYearsLeft).toEqual(262);
+    expect(user.venusYearsLeft).toEqual(101);
+    expect(user.marsYearsLeft).toEqual(33);
+    expect(user.jupiterYearsLeft).toEqual(5);
   });
 
   it('should return years over average if older than average life expectancy', function(){
-    const user = new User(6, 10, 1928);
+    const user = new User(6, 10, 1928, 'high', 'male', 4);
     ageCalc(user);
     userLifeExpectancy(user);
-    expect(user.earthYearsOver).toEqual(12);
-    expect(user.mercuryYearsOver).toEqual(50);
-    expect(user.venusYearsOver).toEqual(19);
-    expect(user.marsYearsOver).toEqual(6);
-    expect(user.jupiterYearsOver).toEqual(1);
+    expect(user.earthYearsOver).toEqual(7);
+    expect(user.mercuryYearsOver).toEqual(29);
+    expect(user.venusYearsOver).toEqual(11);
+    expect(user.marsYearsOver).toEqual(3);
+    expect(user.jupiterYearsOver).toEqual(0);
   });
 
 });

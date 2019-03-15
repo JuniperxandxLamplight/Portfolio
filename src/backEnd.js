@@ -1,7 +1,11 @@
-function User(month, date, year){
+function User(month, date, year, activity, sex, relationships, smoker){
   this.month = month;
   this.date = date;
   this.year = year;
+  this.activityLevel = activity;
+  this.sex = sex;
+  this.closeRelationships = relationships;
+  this.smoker = smoker
 }
 
 function ageCalc(user){
@@ -30,14 +34,42 @@ function ageCalc(user){
 }
 
 function userLifeExpectancy(user){
-  if (user.earthAge > 78){
-    user.earthYearsOver = user.earthAge - 78;
+  let lifeExpectancy;
+
+  if (user.sex === 'male'){
+    lifeExpectancy = 76;
+  } else if (user.sex === 'female'){
+    lifeExpectancy = 80;
+  }
+
+  if (user.smoker === 'yes'){
+    lifeExpectancy -= 7;
+  } else if (user.smoker === 'no'){
+    lifeExpectancy += 3;
+  }
+
+  if (user.activityLevel === 'high'){
+    lifeExpectancy += 2;
+  } else if (user.activityLevel === 'low'){
+    lifeExpectancy -= 2;
+  }
+
+  if (user.closeRelationships >= 4){
+    lifeExpectancy += 5;
+  } else if (user.closeRelationships <= 1){
+    lifeExpectancy -= 5;
+  }
+
+  user.averageLifeExpectancy = lifeExpectancy;
+
+  if (user.earthAge > user.averageLifeExpectancy){
+    user.earthYearsOver = user.earthAge - user.averageLifeExpectancy;
     user.mercuryYearsOver = parseInt(user.earthYearsOver / .24);
     user.venusYearsOver = parseInt(user.earthYearsOver / .62);
     user.marsYearsOver = parseInt(user.earthYearsOver / 1.88);
     user.jupiterYearsOver = parseInt(user.earthYearsOver / 11.86);
   } else {
-    user.earthYearsLeft = 78 - user.earthAge;
+    user.earthYearsLeft = user.averageLifeExpectancy - user.earthAge;
     user.mercuryYearsLeft = parseInt(user.earthYearsLeft / .24);
     user.venusYearsLeft = parseInt(user.earthYearsLeft / .62);
     user.marsYearsLeft = parseInt(user.earthYearsLeft / 1.88);
