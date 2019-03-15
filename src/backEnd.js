@@ -42,9 +42,9 @@ function userLifeExpectancy(user){
     lifeExpectancy = 80;
   }
 
-  if (user.smoker === 'yes'){
+  if (user.smoker == true){
     lifeExpectancy -= 7;
-  } else if (user.smoker === 'no'){
+  } else if (user.smoker == false){
     lifeExpectancy += 3;
   }
 
