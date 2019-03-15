@@ -4,7 +4,7 @@ describe('userAges', function(){
 
     const user = new User(6, 10, 1998);
 
-  it('should return the age of the user in years', function(){
+  it('should return the age of the user in years on Earth', function(){
     ageCalc(user);
     expect(user.earthAge).toEqual(20);
   });
@@ -17,5 +17,15 @@ describe('userAges', function(){
   it('should return the age of the user in years on Venus', function(){
     ageCalc(user);
     expect(user.venusAge).toEqual(32);
+  });
+
+  it('should return the age of the user in years on Mars', function(){
+    ageCalc(user);
+    expect(user.marsAge).toEqual(10);
+  });
+
+  it('should return the age of the user in years on Jupiter', function(){
+    ageCalc(user);
+    expect(user.jupiterAge).toEqual(1);
   });
 });
