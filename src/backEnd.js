@@ -23,15 +23,26 @@ function ageCalc(user){
     timeOfYear += 1;
   }
   user.earthAge = yearDifference + timeOfYear;
-
-  user.mercuyrAge = parseInt(user.earthAge / .24);
-
+  user.mercuryAge = parseInt(user.earthAge / .24);
   user.venusAge = parseInt(user.earthAge / .62);
-
   user.marsAge = parseInt(user.earthAge / 1.88);
-
   user.jupiterAge = parseInt(user.earthAge / 11.86);
 }
 
+function userLifeExpectancy(user){
+  if (user.earthAge > 78){
+    user.earthYearsOver = user.earthAge - 78;
+    user.mercuryYearsOver = parseInt(user.earthYearsOver / .24);
+    user.venusYearsOver = parseInt(user.earthYearsOver / .62);
+    user.marsYearsOver = parseInt(user.earthYearsOver / 1.88);
+    user.jupiterYearsOver = parseInt(user.earthYearsOver / 11.86);
+  } else {
+    user.earthYearsLeft = 78 - user.earthAge;
+    user.mercuryYearsLeft = parseInt(user.earthYearsLeft / .24);
+    user.venusYearsLeft = parseInt(user.earthYearsLeft / .62);
+    user.marsYearsLeft = parseInt(user.earthYearsLeft / 1.88);
+    user.jupiterYearsLeft = parseInt(user.earthYearsLeft / 11.86);
+  }
+}
 
-export { User, ageCalc };
+export { User, ageCalc, userLifeExpectancy };
