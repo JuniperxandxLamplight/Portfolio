@@ -31,7 +31,7 @@ describe('userAges', function(){
 describe('userLifeExpectancy', function(){
 
   it('should check what the life expectancy of user is', function(){
-    const user = new User(6, 10, 1998, 'high', 'male', 4, 'no');
+    const user = new User(6, 10, 1998, 'high', 'male', 4, false);
     ageCalc(user);
     userLifeExpectancy(user);
     expect(user.averageLifeExpectancy).toEqual(86);
