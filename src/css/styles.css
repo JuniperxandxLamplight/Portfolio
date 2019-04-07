@@ -122,37 +122,29 @@ body{
 		background-color: rgba(0,200,200,.25);
 	}
 }
-/* @keyframes leftSweep{
-	0%{
-		background-color: lightseagreen;
-	}
-	25%{
-		background-color: turquoise;
-	}
-	50%{
-		background-color: rgb(125,231,223);
-	}
-	75%{
-		background-color: turquoise;
-	}
-	100%{
-		background-color: lightseagreen;
-	}
-} */
 @keyframes movement{
   0%{
-    border-radius: 5%;
+    border-top-right-radius: 5%;
+		border-bottom-left-radius: 5%;
   }
-  25%{
-    border-radius: 25%;
+  20%{
+		border-top-right-radius: 35%;
+		border-bottom-left-radius: 35%;
   }
-  50%{
-    border-radius: 50%;
+  40%{
+		border-top-right-radius: 5%;
+		border-bottom-left-radius: 5%;
   }
-  75%{
-    border-radius: 25%;
+  60%{
+		border-bottom-right-radius: 5%;
+		border-top-left-radius: 5%;
+  }
+  80%{
+		border-bottom-right-radius: 35%;
+		border-top-left-radius: 35%;
   }
   100%{
-    border-radius: 5%;
+		border-bottom-right-radius: 5%;
+		border-top-left-radius: 5%;
   }
 }
